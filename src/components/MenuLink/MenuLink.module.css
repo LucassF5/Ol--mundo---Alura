@@ -1,0 +1,12 @@
+.link {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    color: var(--cor-fonte-principal);
+}
+
+.linkDestacado {
+    margin-top: 5px;
+    text-decoration: underline;
+    text-decoration-color: rgba(128, 79, 212, 0.692);
+    text-decoration-style: double;
+}
