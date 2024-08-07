@@ -1,8 +1,16 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Inicio from "./components/Inicio"
+import SobreMim from "./components/SobreMim"
+
 function App() {
   return (
-    <div className="App">
-      <h1>Olá mundo!</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/sobre_mim" element={<SobreMim />} />
+        <Route path="*" element={<h1>Página não encontrada</h1>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
