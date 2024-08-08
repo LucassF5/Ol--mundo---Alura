@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom"
 import posts from "json/posts.json"
 import PostModelo from "components/PostModelo"
+import ReactMarkdown from "react-markdown"
+import "./Post.css"
 
 export default function Post() {
 
     const parametros = useParams()
 
-    const post = posts.find((post)=>{
+    const post = posts.find((post) => {
         return post.id === Number(parametros.id)
     })
 
@@ -15,7 +17,12 @@ export default function Post() {
             fotoCapa={`assets/posts/${post.id}/capa.png`}
             titulo={post.titulo}
         >
-            AAAAAAAAAAAA
+            <div className="post-markdown-container">
+                <ReactMarkdown>
+                    {post.texto}
+                </ReactMarkdown>
+            </div>
+
         </PostModelo>
     )
 }
